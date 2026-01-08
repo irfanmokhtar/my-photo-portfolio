@@ -10,17 +10,23 @@ export default function About() {
         <div className="space-y-6">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">More than just <br/> a camera.</h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            I believe that photography is about seeing the world in a way that others might miss. Whether it is a wedding, a fashion shoot, or a commercial project, my goal is to tell a story through light and composition.
+            I believe that photography is about capturing your precious moments in a way that you'll treasure forever. Whether it's a family gathering, graduation, birthday celebration, or special event, my goal is to tell your story through beautiful, natural photos at prices that work for you.
           </p>
           <div className="grid grid-cols-2 gap-4 pt-4">
             <div className="p-6 bg-white rounded-xl shadow-sm">
-              <h3 className="font-bold text-xl mb-2">Editorial</h3>
-              <p className="text-sm text-gray-500">High-end fashion and magazine features.</p>
+              <h3 className="font-bold text-xl mb-2">Family & Events</h3>
+              <p className="text-sm text-gray-500">Family portraits, birthdays, and celebrations.</p>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-sm">
-              <h3 className="font-bold text-xl mb-2">Commercial</h3>
-              <p className="text-sm text-gray-500">Product photography and brand campaigns.</p>
+              <h3 className="font-bold text-xl mb-2">Graduations</h3>
+              <p className="text-sm text-gray-500">Graduation photos and milestone moments.</p>
             </div>
+          </div>
+          <div className="pt-2">
+            <p className="text-base text-gray-700 font-medium">
+              Packages starting from <span className="text-2xl font-bold text-black">RM 299</span>
+            </p>
+            <p className="text-sm text-gray-500 mt-1">Flexible packages to fit your budget</p>
           </div>
         </div>
       </div>

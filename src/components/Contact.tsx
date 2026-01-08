@@ -5,11 +5,26 @@ import { Instagram, Mail, Twitter } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="snap-start h-screen w-full bg-black text-white flex items-center justify-center p-6">
-      <div className="max-w-xl w-full space-y-8">
+    <section id="contact" className="snap-start min-h-screen w-full bg-black text-white flex items-center justify-center p-6 pt-24 pb-24">
+      <div className="max-w-2xl w-full space-y-8">
         <div className="text-center space-y-2">
           <h2 className="text-4xl font-bold">Let's Work Together</h2>
-          <p className="text-gray-400">Fill out the form below to discuss your project.</p>
+          <p className="text-gray-400">Get in touch to discuss your photography needs and get a quote.</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4 mb-8">
+          <div className="bg-stone-900 p-4 rounded-lg text-center">
+            <p className="text-2xl font-bold mb-1">RM 299</p>
+            <p className="text-sm text-gray-400">Starting Price</p>
+          </div>
+          <div className="bg-stone-900 p-4 rounded-lg text-center">
+            <p className="text-2xl font-bold mb-1">Flexible</p>
+            <p className="text-sm text-gray-400">Payment Plans</p>
+          </div>
+          <div className="bg-stone-900 p-4 rounded-lg text-center">
+            <p className="text-2xl font-bold mb-1">All Areas</p>
+            <p className="text-sm text-gray-400">Malaysia Wide</p>
+          </div>
         </div>
 
         <form className="space-y-4">
@@ -29,7 +44,7 @@ export default function Contact() {
           </div>
           <div className="space-y-2">
             <label className="text-sm font-medium">Message</label>
-            <Textarea placeholder="Tell me about your project..." className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600 min-h-[120px]" />
+            <Textarea placeholder="Tell me about your event or photography needs..." className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600 min-h-[120px]" />
           </div>
           <Button className="w-full bg-white text-black hover:bg-gray-200 h-12 text-lg font-medium">
             Send Message
