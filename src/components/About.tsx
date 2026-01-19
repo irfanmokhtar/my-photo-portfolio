@@ -8,9 +8,9 @@ export default function About() {
           <Image src="https://images.unsplash.com/photo-1554048612-387768052bf7?q=80&w=1000&auto=format&fit=crop" alt="Photographer" fill className="object-cover" />
         </div>
         <div className="space-y-6">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">More than just <br/> a camera.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">More than just <br /> a camera.</h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            I believe that photography is about capturing your precious moments in a way that you'll treasure forever. Whether it's a family gathering, graduation, birthday celebration, or special event, my goal is to tell your story through beautiful, natural photos at prices that work for you.
+            I believe that photography is about capturing your precious moments in a way that you&apos;ll treasure forever. Whether it&apos;s a family gathering, graduation, birthday celebration, or special event, my goal is to tell your story through beautiful, natural photos at prices that work for you.
           </p>
           <div className="grid grid-cols-2 gap-4 pt-4">
             <div className="p-6 bg-white rounded-xl shadow-sm">

@@ -8,7 +8,7 @@ export default function Contact() {
     <section id="contact" className="snap-start min-h-screen w-full bg-black text-white flex items-center justify-center p-6 pt-24 pb-24">
       <div className="max-w-2xl w-full space-y-8">
         <div className="text-center space-y-2">
-          <h2 className="text-4xl font-bold">Let's Work Together</h2>
+          <h2 className="text-4xl font-bold">Let&apos;s Work Together</h2>
           <p className="text-gray-400">Get in touch to discuss your photography needs and get a quote.</p>
         </div>
 
