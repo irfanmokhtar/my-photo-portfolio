@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Gallery from "@/components/Gallery";
 import About from "@/components/About";
+import Calculator from "@/components/Calculator";
 import Contact from "@/components/Contact";
 
 export default function PhotographyPortfolio() {
@@ -11,6 +12,7 @@ export default function PhotographyPortfolio() {
       <Hero />
       <Gallery />
       <About />
+      <Calculator />
       <Contact />
     </main>
   );
