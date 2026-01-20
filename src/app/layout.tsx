@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lenscraft Photography",
-  description: "Professional photography services in Malaysia",
+  title: "746 Photography",
+  description: "Servis fotografi premium tapi murah di Malaysia",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ms">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -5,7 +5,7 @@ export default function About() {
     <section id="about" className="snap-start h-screen w-full bg-stone-100 flex items-center justify-center p-6">
       <div className="grid md:grid-cols-2 gap-12 max-w-6xl w-full items-center">
         <div className="relative h-[400px] md:h-[600px] w-full rounded-lg overflow-hidden shadow-2xl">
-          <Image src="https://images.unsplash.com/photo-1554048612-387768052bf7?q=80&w=1000&auto=format&fit=crop" alt="Photographer" fill className="object-cover" />
+          <Image src="/ConvoAsiah-163.jpg" alt="Asiah Convo" fill className="object-cover" />
         </div>
         <div className="space-y-6">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">More than just <br /> a camera.</h2>
