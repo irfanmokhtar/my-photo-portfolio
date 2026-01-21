@@ -4,19 +4,19 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const packages = [
-    { id: "wedding", name: "Wedding", basePrice: 600, defaultHours: 5 },
-    { id: "convocation", name: "Convocation", basePrice: 100, defaultHours: 1 },
-    { id: "events", name: "Events", basePrice: 250, defaultHours: 2 },
+    { id: "wedding", name: "Raja Sehari", basePrice: 500, defaultHours: 4, description: "Majlis tunang, nikah, sanding, bertandang" },
+    { id: "convocation", name: "Menara Gading", basePrice: 150, defaultHours: 2, description: "Convocation day, Pre/post-Convo" },
+    { id: "events", name: "Meraikan", basePrice: 250, defaultHours: 2, description: "Majlis korporat, hari lahir, aqiqah, dll." },
 ];
 
 const addOns = [
-    { id: "extra-photographer", name: "Extra Photographer", price: 200, bonusHours: 0 },
-    { id: "album", name: "Physical Photo Album", price: 300, bonusHours: 0 },
-    { id: "outdoor", name: "Outdoor Photoshoot", price: 120, bonusHours: 1 },
-    { id: "preparation", name: "Preparation Moment", price: 120, bonusHours: 1 },
+    { id: "extra-photographer", name: "Extra Photographer", price: 250, bonusHours: 0 },
+    { id: "album", name: "Photobook Album", price: 400, bonusHours: 0 },
+    { id: "outdoor", name: "Sesi Outdoor", price: 0, bonusHours: 1 },
+    { id: "preparation", name: "Preparation Moment", price: 0, bonusHours: 1 },
 ];
 
-const HOURLY_RATE = 130;
+const HOURLY_RATE = 150;
 
 export default function Calculator() {
     const [selectedPackage, setSelectedPackage] = useState(packages[0].id);
@@ -58,7 +58,9 @@ export default function Calculator() {
     const calculateTotal = () => {
         const pkg = packages.find((p) => p.id === selectedPackage);
         const basePrice = pkg?.basePrice || 0;
-        const hoursPrice = hours * HOURLY_RATE;
+        const defaultHours = pkg?.defaultHours || 0;
+        const extraHours = Math.max(0, hours - defaultHours);
+        const hoursPrice = extraHours * HOURLY_RATE;
         const addOnsPrice = selectedAddOns.reduce((sum, id) => {
             const addOn = addOns.find((a) => a.id === id);
             return sum + (addOn?.price || 0);
@@ -74,16 +76,16 @@ export default function Calculator() {
             <div className="max-w-2xl w-full space-y-8">
                 <div className="text-center space-y-2">
                     <h2 className="text-4xl font-bold tracking-tight text-black">
-                        Price Calculator
+                        Kira-Kira Harga
                     </h2>
                     <p className="text-gray-500">
-                        Get an instant estimate for your photography session.
+                        Dapatkan anggaran harga untuk sesi fotografi anda. <br /><span className="text-xs">Harga akhir selepas selesai berbincang.</span>
                     </p>
                 </div>
 
                 {/* Package Selection */}
                 <div className="space-y-3">
-                    <h3 className="font-semibold text-lg text-black">1. Choose a Package</h3>
+                    <h3 className="font-semibold text-lg text-black">1. Pilih Pakej</h3>
                     <div className="grid grid-cols-3 gap-3">
                         {packages.map((pkg) => (
                             <button
@@ -95,7 +97,8 @@ export default function Calculator() {
                                     }`}
                             >
                                 <p className="font-bold">{pkg.name}</p>
-                                <p className="text-sm opacity-80">From RM {pkg.basePrice}</p>
+                                <p className="text-xs text-gray-500 py-1">{pkg.description}</p>
+                                <p className="text-sm opacity-80">Dari RM {pkg.basePrice}</p>
                             </button>
                         ))}
                     </div>
@@ -103,7 +106,7 @@ export default function Calculator() {
 
                 {/* Hours Selection */}
                 <div className="space-y-3">
-                    <h3 className="font-semibold text-lg text-black">2. Select Hours</h3>
+                    <h3 className="font-semibold text-lg text-black">2. Tempoh Majlis</h3>
                     <div className="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200">
                         <Button
                             variant="outline"
@@ -116,7 +119,7 @@ export default function Calculator() {
                         <div className="flex-1 text-center">
                             <span className="text-3xl font-bold text-black">{hours}</span>
                             <span className="text-gray-500 ml-2">
-                                {hours === 1 ? "hour" : "hours"}
+                                {hours === 1 ? "jam" : "jam"}
                             </span>
                         </div>
                         <Button
@@ -129,7 +132,7 @@ export default function Calculator() {
                         </Button>
                     </div>
                     <p className="text-sm text-gray-500 text-center">
-                        RM {HOURLY_RATE} per hour
+                        RM {HOURLY_RATE} per jam
                     </p>
                 </div>
 
@@ -149,7 +152,7 @@ export default function Calculator() {
                                 <p className="font-medium">{addOn.name}</p>
                                 <p className="text-sm opacity-80">
                                     + RM {addOn.price}
-                                    {addOn.bonusHours > 0 && ` (+${addOn.bonusHours}hr)`}
+                                    {addOn.bonusHours > 0 && ` (+${addOn.bonusHours} jam)`}
                                 </p>
                             </button>
                         ))}

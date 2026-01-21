@@ -30,7 +30,7 @@ export default function Hero() {
           </Link>
           <Link href="#calculator">
             <Button size="lg" className="rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-gray-200">
-              Kira Harga
+              Anggaran Harga
             </Button>
           </Link>
         </div>

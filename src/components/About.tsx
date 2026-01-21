@@ -8,25 +8,23 @@ export default function About() {
           <Image src="/ConvoAsiah-163.jpg" alt="Asiah Convo" fill className="object-cover" />
         </div>
         <div className="space-y-6">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">More than just <br /> a camera.</h2>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">Bukan hanya sekadar <br /> gambar.</h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            I believe that photography is about capturing your precious moments in a way that you&apos;ll treasure forever. Whether it&apos;s a family gathering, graduation, birthday celebration, or special event, my goal is to tell your story through beautiful, natural photos at prices that work for you.
+            Fotografi bukan hanya sekadar gambar, tetapi juga penceritaan tentang emosi dan peristiwa pada hari istimewa anda. Tak kira majlis perkahwinan, pertunangan, hari lahir, mahupun perayaan lain-lain, sepenuh jiwa 746 berjanji akan memberi pengalaman terbaik kepada anda.
           </p>
-          <div className="grid grid-cols-2 gap-4 pt-4">
+          <div className="grid gap-4 pt-4">
             <div className="p-6 bg-white rounded-xl shadow-sm">
-              <h3 className="font-bold text-xl mb-2">Family & Events</h3>
-              <p className="text-sm text-gray-500">Family portraits, birthdays, and celebrations.</p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-sm">
-              <h3 className="font-bold text-xl mb-2">Graduations</h3>
-              <p className="text-sm text-gray-500">Graduation photos and milestone moments.</p>
+              <h3 className="font-bold text-xl mb-2">Siapa 746 Photography?</h3>
+              <p className="text-sm text-gray-500">📍 Bertapak di Penang & Kuala Lumpur, servis meliputi seluruh Semenanjung Malaysia.</p>
+              <p className="text-sm text-gray-500 pt-2">📸 Bermula dari minat terhadap kamera dari bangku sekolah, kini berpengalaman dalam fotografi rasmi selama 5 tahun.</p>
             </div>
           </div>
           <div className="pt-2">
             <p className="text-base text-gray-700 font-medium">
-              Packages starting from <span className="text-2xl font-bold text-black">RM 299</span>
+              {/* <span className="text-2xl font-bold text-black">Jangan segan silu</span> untuk hubungi kami untuk sebarang persoalan! */}
+              Jangan segan silu untuk hubungi kami untuk sebarang persoalan!
             </p>
-            <p className="text-sm text-gray-500 mt-1">Flexible packages to fit your budget</p>
+            <p className="text-sm text-gray-500 mt-1">Sebarang permintaan dan expectation sehabis baik akan kami penuhi.</p>
           </div>
         </div>
       </div>
