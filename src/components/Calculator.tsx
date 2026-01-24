@@ -12,8 +12,8 @@ const packages = [
 const addOns = [
     { id: "extra-photographer", name: "Extra Photographer", price: 250, bonusHours: 0 },
     { id: "album", name: "Photobook Album", price: 400, bonusHours: 0 },
-    { id: "outdoor", name: "Sesi Outdoor", price: 0, bonusHours: 1 },
-    { id: "preparation", name: "Preparation Moment", price: 0, bonusHours: 1 },
+    { id: "outdoor", name: "Sesi Outdoor", price: 130, bonusHours: 1 },
+    { id: "preparation", name: "Preparation Moment", price: 130, bonusHours: 1 },
 ];
 
 const HOURLY_RATE = 150;
@@ -59,8 +59,17 @@ export default function Calculator() {
         const pkg = packages.find((p) => p.id === selectedPackage);
         const basePrice = pkg?.basePrice || 0;
         const defaultHours = pkg?.defaultHours || 0;
-        const extraHours = Math.max(0, hours - defaultHours);
+
+        // Calculate bonus hours from selected add-ons
+        const bonusHoursFromAddOns = selectedAddOns.reduce((sum, id) => {
+            const addOn = addOns.find((a) => a.id === id);
+            return sum + (addOn?.bonusHours || 0);
+        }, 0);
+
+        // Only charge hourly rate for manually added hours (exclude default + bonus hours)
+        const extraHours = Math.max(0, hours - defaultHours - bonusHoursFromAddOns);
         const hoursPrice = extraHours * HOURLY_RATE;
+
         const addOnsPrice = selectedAddOns.reduce((sum, id) => {
             const addOn = addOns.find((a) => a.id === id);
             return sum + (addOn?.price || 0);
@@ -79,7 +88,7 @@ export default function Calculator() {
                         Kira-Kira Harga
                     </h2>
                     <p className="text-gray-500">
-                        Dapatkan anggaran harga untuk sesi fotografi anda. <br /><span className="text-xs">Harga akhir selepas selesai berbincang.</span>
+                        Dapatkan anggaran harga untuk sesi fotografi anda. <br /><span className="text-xs">Harga terpapar hanya anggaran kasar, harga muktamad selepas selesai perbincangan.</span>
                     </p>
                 </div>
 

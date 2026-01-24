@@ -1,9 +1,34 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Instagram, Mail, Twitter } from "lucide-react";
 
+const WHATSAPP_PHONE_NUMBER = "60123456789"; // Placeholder phone number
+
 export default function Contact() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const fullMessage = `Hai, saya ${firstName} ${lastName}.
+
+Email: ${email}
+
+${message}`;
+
+    const encodedMessage = encodeURIComponent(fullMessage);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <section id="contact" className="snap-start min-h-screen w-full bg-black text-white flex items-center justify-center p-6 pt-24 pb-24">
       <div className="max-w-2xl w-full space-y-8">
@@ -27,26 +52,47 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium">First Name</label>
-              <Input placeholder="John" className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600" />
+              <Input
+                placeholder="John"
+                className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Last Name</label>
-              <Input placeholder="Doe" className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600" />
+              <Input
+                placeholder="Doe"
+                className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
             </div>
           </div>
           <div className="space-y-2">
             <label className="text-sm font-medium">Email</label>
-            <Input type="email" placeholder="john@example.com" className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600" />
+            <Input
+              type="email"
+              placeholder="john@example.com"
+              className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="space-y-2">
             <label className="text-sm font-medium">Message</label>
-            <Textarea placeholder="Tell me about your event or photography needs..." className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600 min-h-[120px]" />
+            <Textarea
+              placeholder="Tell me about your event or photography needs..."
+              className="bg-stone-900 border-stone-800 text-white placeholder:text-gray-600 min-h-[120px]"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
           </div>
-          <Button className="w-full bg-white text-black hover:bg-gray-200 h-12 text-lg font-medium">
+          <Button type="submit" className="w-full bg-white text-black hover:bg-gray-200 h-12 text-lg font-medium">
             Send Message
           </Button>
         </form>
@@ -57,7 +103,7 @@ export default function Contact() {
           <Mail className="hover:text-white cursor-pointer transition-colors" />
         </div>
         <p className="text-center text-xs text-stone-600 pt-8">
-          © 2025 Lenscraft Photography. All rights reserved.
+          © 2026 746 Photography. Hak cipta terpelihara.
         </p>
       </div>
     </section>
