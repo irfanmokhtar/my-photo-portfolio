@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Instagram, Mail, Twitter } from "lucide-react";
 
-const WHATSAPP_PHONE_NUMBER = "60123456789"; // Placeholder phone number
+const WHATSAPP_PHONE_NUMBER = "601113025256"; // Placeholder phone number
 
 export default function Contact() {
   const [firstName, setFirstName] = useState("");
@@ -53,7 +53,7 @@ ${message}`;
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium">First Name</label>
               <Input

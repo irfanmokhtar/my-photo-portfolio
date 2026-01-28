@@ -15,21 +15,21 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 text-center text-white space-y-6 max-w-3xl px-4">
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none">
+      <div className="relative z-10 text-center text-white space-y-6 max-w-3xl px-6">
+        <h1 className="text-4xl md:text-8xl font-black tracking-tighter uppercase leading-none">
           Cipta Kenangan <br /> Abadi
         </h1>
         <p className="text-lg md:text-xl text-gray-200 max-w-lg mx-auto">
           Hasil fotografi premium pada harga mampu milik untuk hari bahagia dan majlis istimewa anda.
         </p>
-        <div className="pt-4 flex flex-wrap justify-center gap-6">
-          <Link href="#gallery">
-            <Button size="lg" className="rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-gray-200">
+        <div className="pt-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+          <Link href="#gallery" className="w-full md:w-auto">
+            <Button size="lg" className="w-full md:w-auto rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-gray-200">
               Ke Galeri
             </Button>
           </Link>
-          <Link href="#calculator">
-            <Button size="lg" className="rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-gray-200">
+          <Link href="#calculator" className="w-full md:w-auto">
+            <Button size="lg" className="w-full md:w-auto rounded-full px-8 text-lg h-14 bg-white text-black hover:bg-gray-200">
               Anggaran Harga
             </Button>
           </Link>

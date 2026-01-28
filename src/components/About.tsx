@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="snap-start h-screen w-full bg-stone-100 flex items-center justify-center p-6">
+    <section id="about" className="snap-start min-h-screen md:h-screen w-full bg-stone-100 flex items-center justify-center px-6 py-24">
       <div className="grid md:grid-cols-2 gap-12 max-w-6xl w-full items-center">
         <div className="relative h-[400px] md:h-[600px] w-full rounded-lg overflow-hidden shadow-2xl">
           <Image src="/ConvoAsiah-163.jpg" alt="Asiah Convo" fill className="object-cover" />
